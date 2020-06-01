@@ -21,6 +21,8 @@ django.setup()
 
 from apis.models import App
 
+
+
 def init_app_data():
     old_apps = App.objects.all()
     path = os.path.join(settings.BASE_DIR, 'app.yaml')

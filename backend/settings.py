@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     
     # 新应用
     'apis.apps.ApisConfig',
-    'authorization.apps.AuthorizationConfig'
+    'authorization.apps.AuthorizationConfig',
+
+     # 第三方应用
+    'django_crontab'
 ]
 
 MIDDLEWARE = [
@@ -49,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'module.middleware.StatisticsMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -148,6 +152,7 @@ IMAGES_DIR = os.path.join(RESOURCES_DIR, 'images')
 # app secret 由开发者在微信官网开发者页面生成的
 WX_APP_SECRET = '0f70dcd8c385015c8c2984cbef3ad67a'
 
+APPID = 'wx4881bfd142efe335'
 # session超时时间
 SESSION_COOKIE_AGE = 60*60*24*1
 
@@ -224,3 +229,30 @@ LOGGING = {
         }
     }
 }
+
+
+
+# django_crontab config
+CRONJOBS = [
+    # ('*/1 * * * *', 'cron.jobs.demo')
+    ('*/1 * * * *', 'cron.jobs.report_by_mail')
+]
+
+
+# 发送邮件配置
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# smtp服务地址
+EMAIL_HOST = 'smtp.qq.com'
+EMAIL_PORT = 25
+# 发送邮件的邮箱
+EMAIL_HOST_USER = '957177569@qq.com'
+# 在邮箱中设置的客户端授权密码
+EMAIL_HOST_PASSWORD = 'gwwsuxrdyflkbbge'
+EMAIL_USE_TLS = True  # qq邮箱为True
+# 收件人看到的发件人
+EMAIL_FROM = '<957177569@qq.com>'
+
+
+
+# 统计字段分割符
+STATISTICS_SPLIT_FLAG = '||'
