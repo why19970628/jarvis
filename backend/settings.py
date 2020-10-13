@@ -150,9 +150,9 @@ RESOURCES_DIR = os.path.join(BASE_DIR, 'resources')
 IMAGES_DIR = os.path.join(RESOURCES_DIR, 'images')
 
 # app secret 由开发者在微信官网开发者页面生成的
-WX_APP_SECRET = '0f70dcd8c385015c8c2984cbef3ad67a'
+WX_APP_SECRET = '0f70dcd8c385015c'
 
-APPID = 'wx4881bfd142efe335'
+APPID = 'wx4881bfd14'
 # session超时时间
 SESSION_COOKIE_AGE = 60*60*24*1
 
@@ -247,7 +247,7 @@ EMAIL_PORT = 25
 # 发送邮件的邮箱
 EMAIL_HOST_USER = '957177569@qq.com'
 # 在邮箱中设置的客户端授权密码
-EMAIL_HOST_PASSWORD = 'gwwsuxrdyflkbbge'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = True  # qq邮箱为True
 # 收件人看到的发件人
 EMAIL_FROM = '<957177569@qq.com>'
